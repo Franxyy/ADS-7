@@ -61,8 +61,8 @@ int Train::getLength() {
       countOp++;
     }
 
-    if (!cur->light) {
-      cur->light = true;
+    if (cur->light) {
+      cur->light = false;
     }
 
     for (int i = 0; i < step; i++) {
@@ -70,7 +70,7 @@ int Train::getLength() {
       countOp++;
     }
 
-    if (first->light) {
+    if (!first->light) {
       return step;
     }
 
